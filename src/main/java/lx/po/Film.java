@@ -133,4 +133,13 @@ public class Film {
     public void setDescription(String description) {
         this.description = description == null ? null : description.trim();
     }
+
+	@Override
+	public String toString() {
+		return "Film [filmId=" + filmId + ", title=" + title + ", releaseYear=" + releaseYear + ", languageId="
+				+ languageId + ", originalLanguageId=" + originalLanguageId + ", rentalDuration=" + rentalDuration
+				+ ", rentalRate=" + rentalRate + ", length=" + length + ", replacementCost=" + replacementCost
+				+ ", rating=" + rating + ", specialFeatures=" + specialFeatures + ", lastUpdate=" + lastUpdate
+				+ ", description=" + description + "]";
+	}
 }

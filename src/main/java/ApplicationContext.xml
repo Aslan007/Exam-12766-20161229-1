@@ -15,7 +15,7 @@
         http://www.springframework.org/schema/tx/spring-tx.xsd">
 
 	<!-- 开启注解扫描 -->
-	<context:component-scan base-package="lx" />
+	<context:component-scan base-package="lx"/>
 	<!-- 开启AOP的注解 -->
 	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
@@ -33,13 +33,13 @@
 	<!-- 配置sqlSessionFactory -->
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:mybatis/sqlMapConfig.xml" />
+		<property name="configLocation" value="classpath:sqlMapConfig.xml" />
 	</bean>
 
 	<!-- 配置mapper扫描器 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<!-- 扫描包的路径，如果需要扫描多个包，中间使用半角 逗号隔开 -->
-		<property name="basePackage" value="test.mapper" />
+		<property name="basePackage" value="lx.mapper" />
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"></property>
 	</bean>
 
@@ -85,8 +85,5 @@
 	<!--service================== -->
 	<bean id="filmService" class="lx.service.impl.FilmServiceImpl"></bean>
 	<bean id="film" class="lx.po.Film"></bean>
-	
-	<!-- <bean id="testUserMapper" class="test.mapper.TestUserMapper"></bean>
-	<bean id="testUserInfoMapper" class="test.mapper.TestUserInfoMapper"></bean> -->
 
 </beans>
