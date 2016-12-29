@@ -15,7 +15,7 @@ public class SpringEventListener implements ApplicationListener<ApplicationEvent
 	public void onApplicationEvent(ApplicationEvent event) {
 		
 		   if(event instanceof ContextClosedEvent ){    
-               System.out.println(event.getClass().getSimpleName()+"=================****  Context stop!");        
+               System.out.println(event.getClass().getSimpleName()+ ": Context stop!");        
               }
 		   if(event instanceof BeforeInsertFilmEvent ){    
                    System.out.println("Before Insert Film Data!");    
@@ -25,7 +25,7 @@ public class SpringEventListener implements ApplicationListener<ApplicationEvent
               }
 		   
 		   if(event instanceof ContextStartedEvent ){    
-               System.out.println(event.getClass().getSimpleName()+" Context Start！");    
+               System.out.println(event.getClass().getSimpleName()+": Context Start！");    
           }
 		
 	}

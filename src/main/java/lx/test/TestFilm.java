@@ -28,7 +28,7 @@ public class TestFilm {
 		 String description =  s2.nextLine();
 		 film.setDescription(description);
 		 
-		 System.out.println("请输入语言 ID(language_id):");
+		 System.out.println("请输入语言 ID(language_id，目前只有一种语言，只能输入1，否则报错):");
 		 Scanner s3 = new Scanner(System.in);
 		 String language_id =  s3.nextLine();
 		 int i = Integer.parseInt(language_id);
