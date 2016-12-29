@@ -65,25 +65,17 @@
 			<tx:method name="select*" propagation="SUPPORTS" read-only="true" />
 		</tx:attributes>
 	</tx:advice>
-
 	<aop:config>
 		<aop:advisor advice-ref="txAdvice"
-			pointcut="execution(* test.service.impl.*.*(..))" />
+			pointcut="execution(* lx.service.impl.*.*(..))" />
 	</aop:config>
 
-	<!-- 配置AOP，处理每次调用serVice所用时间 -->
- 	<!-- <aop:config>
-		<aop:pointcut expression="execution(* test.service.impl.*.*(..))"
-			id="pointcut1" />
-		<aop:aspect ref="countTime">
-			 <aop:around method="count" pointcut-ref="pointcut1" /> -->
-			<!--<aop:before method="before" pointcut-ref="pointcut1" />
-			<aop:before method="after" pointcut-ref="pointcut1" /> -->
-	<!-- 	</aop:aspect>
-	</aop:config>
- -->
+ 
 	<!--service================== -->
 	<bean id="filmService" class="lx.service.impl.FilmServiceImpl"></bean>
 	<bean id="film" class="lx.po.Film"></bean>
+	<bean id="publish" class="lx.aop.Publish"></bean>
+	
+	<bean id="springEventListener" class="lx.listener.SpringEventListener"></bean>
 
 </beans>
